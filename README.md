@@ -12,7 +12,7 @@ Chatbot requires 2 extra NPM modules to be installed, **readline-sync** and **mo
 **(node) npm install readline-sync (and "morse-code" after that)**
 Some warnings might pop up but you can ignore them
 
-After you installed the modules, in the same terminal window just enter: (node) bot.js and you are ready to ask it questions.
+After you installed the modules, in the same terminal window just enter: (node) bot.js , make sure you are pointing to the right path, and you are ready to ask it questions.
 
 # Usage 
 The bot is made to recognize keywords in any sentance.
