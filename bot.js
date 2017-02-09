@@ -4,7 +4,7 @@
 // NPM module, install by using: npm install readline-sync
 const rl = require("readline-sync");
 // Npm module for morsecode encoding and decoding.
-// install by using: npm install readline-sync
+// install by using: npm install morse-node
 const morse = require('morse-node').create("ITU");
 
 var cdata = {
@@ -103,10 +103,28 @@ var states = {
     },
 
     guess: cdata => {
-      console.log("Ok... then im just gonna be the great lambda and read your mind");
-      var reply = rl.prompt();
+      console.log("Ok... then im just gonna be the great lambda and read your mind.\nAnswer me with higher, lower or right");
+      var lL = 0;
+      var uL = 100000
+      var guessNumber = () => {
+        while (true) {
 
-      // TODO add code
+          var guessNumber = Math.floor(Math.random() * (uL - lL)) + lL;;
+          console.log("is your number " + guessNumber);
+          var reply = rl.prompt();
+          if (reply == "higher")
+          { lL = guessNumber; }
+          else if (reply == "lower")
+          { uL = guessNumber; }
+          else if (reply == "right")
+          { return false; }
+          else
+          { console.log("Eh... what?"); }
+        }
+
+      }
+      guessNumber();
+
 
       return "parsecommand";
     }
